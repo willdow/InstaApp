@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="528dp"
-        android:layout_height="235dp"
+        android:layout_width="550dp"
+        android:layout_height="205dp"
         android:layout_marginBottom="8dp"
-        android:scaleType="fitCenter"
+        android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +125,7 @@
         app:layout_constraintVertical_bias="0.926" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/idVoirMdp"
         android:layout_width="33dp"
         android:layout_height="24dp"
         android:layout_marginStart="168dp"
