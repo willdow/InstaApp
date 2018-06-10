@@ -20,220 +20,35 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/idMedecin"
+        android:id="@+id/idNomInfirmier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="19dp"
         android:layout_marginTop="24dp"
-        android:text="NOM Prenom"
         android:textColor="@color/cliniqueBleu"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/list_patients"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:android1="http://schemas.android.com/apk/res/android"
-        android:id="@+id/simple_table"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:stretchColumns="0,1,2"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="84dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:gravity="center"
-                android:text="Nom" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:gravity="center"
-                android:text="Prenom" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:gravity="center"
-                android:text="Chambre" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#000">
-
-            <TextView
-                android:id="@+id/textView1a"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Dupont"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView2a"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Jean"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView3a"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="A"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#000">
-
-            <TextView
-                android:id="@+id/textView1b"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Renault"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView2b"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Charles"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView3b"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="B"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#000">
-
-            <TextView
-                android:id="@+id/textView1c"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Lepetit"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView2c"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Jules"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView3c"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="C"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#000">
-
-            <TextView
-                android:id="@+id/textView1c"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Legrand"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView2c"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="Bernard"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-
-            <TextView
-                android:id="@+id/textView3c"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:background="#FFF"
-                android:gravity="center"
-                android:text="D"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00F"></TextView>
-        </TableRow>
-
-    </TableLayout>
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/list_patients"
+        android:layout_width="match_parent"
+        android:layout_height="443dp"
+        android:layout_margin="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:context="com.lv.listview.MainActivity" />
 
 </android.support.constraint.ConstraintLayout>

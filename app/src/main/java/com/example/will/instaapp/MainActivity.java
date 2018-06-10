@@ -79,32 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 VerifConnexion task = new VerifConnexion();
                 task.execute(new String[]{login, password});
-
-/*                Thread unT = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        VerifConnexion uneConnexion = new VerifConnexion();
-                        uneConnexion.execute(unInfirmier);
-
-                        runOnUiThread(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                if (this.unInfirmier == null) {
-                                    Toast.makeText(ma, "Vérifier vos identifiants", Toast.LENGTH_LONG).show();
-                                } else {
-                                    Toast.makeText(ma, "Bienvenue " + unInfirmier.getEtat_civil() + " " +unInfirmier.getNom(), Toast.LENGTH_LONG).show();
-                                    //Intent unIntent;
-                                    //unIntent = new Intent(ma, Page2.class);
-                                    //unIntent.putExtra("MyClass", unInfirmier);
-                                    //startActivity(unIntent);
-                                    Log.e("erreur", "connexion impossible");
-                                }
-                            }
-                        });
-                    }
-                });
-                unT.start();*/
             }
             else
             {
@@ -183,38 +157,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else try {
                 JSONArray jsonResulat = new JSONArray(resultat);
                 JSONObject resObject = jsonResulat.getJSONObject(0);
-//                if (jsonResulat.getString("erreur") != "") {
-//                    Toast.makeText(MainActivity.this, jsonResulat.getString("erreur"), Toast.LENGTH_SHORT).show();
-//                    Log.e("error", jsonResulat.getString("erreur"));
-//                } else if (jsonResulat.getString("nb") != "") {
-//                    Toast.makeText(MainActivity.this, jsonResulat.getString("nb"), Toast.LENGTH_SHORT).show();
-//                    Log.e("error", jsonResulat.getString("nb"));
-//                }
+                if (resObject.has("erreur")) {
+                    Toast.makeText(MainActivity.this, resObject.getString("erreur"), Toast.LENGTH_SHORT).show();
+                    Log.e("error", resObject.getString("erreur"));
+                } else if (resObject.has("nb")) {
+                    Log.e("error", resObject.getString("nb"));
+
+                    Infirmier unInfirmier = new Infirmier(resObject.getString("etat_civil"), resObject.getString("nom"),
+                            resObject.getString("prenom"), resObject.getString("date_naissance"),
+                            resObject.getString("adresse"), resObject.getString("adressecomp"), resObject.getString("code_postal"),
+                            resObject.getString("Ville"), resObject.getString("telephone"), resObject.getString("login"), resObject.getString("email"),
+                            resObject.getString("urlphoto"), resObject.getString("nomService"), resObject.getInt("idService"), resObject.getInt("idPersonne"));
+
+                    Intent intent = new Intent(MainActivity.this, Page2.class);
+                    intent.putExtra("serialize_data", unInfirmier);
+                    startActivity(intent);
+                }
             } catch (Exception exp) {
                 Log.e("erreur", exp.toString());
             }
-
-//        if (resultat != null) {
-//            try {
-//                JSONArray tabJson = new JSONArray(resultat);
-//                JSONObject unObjet = tabJson.getJSONObject(0);
-//                String nb = unObjet.getString("nb");
-//                Log.e("nb = ", nb);
-//                if (nb == "1") {
-//                    infirmierConnecte = new Infirmier(unObjet.getString("etat_civil"), unObjet.getString("nom"),
-//                            unObjet.getString("prenom"), unObjet.getString("date_naissance"),
-//                            unObjet.getString("adresse"), unObjet.getString("adressecomp"), unObjet.getString("code_postal"),
-//                            unObjet.getString("Ville"), unObjet.getString("telephone"), unInfirmier.getLogin(), unObjet.getString("email"),
-//                            unObjet.getString("urlphoto"), unObjet.getString("nomService"), unObjet.getInt("idService"));
-//                }
-//                else if (unObjet.getString("error") != null)
-//                {
-//                    Log.e("Erreur : ", "Imposible de parser : " + resultat);
-//                }
-//            } catch (JSONException exp) {
-//                Log.e("Erreur : ", "Imposible de parser : " + resultat);
-//            }
-//        }
         }
     }
 }

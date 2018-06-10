@@ -7,12 +7,12 @@ import java.io.Serializable;
 
 public class Infirmier implements Serializable{
     String etat_civil, nom, prenom, date_naissance, adresse, adresesecomp, code_postal, Ville, telephone, login, email, urlphoto, nomService, password;
-    int idService;
+    int idService, idInfirmier;
 
 
     public Infirmier(String etat_civil, String nom, String prenom, String date_naissance, String adresse, String adresesecomp,
                      String code_postal, String Ville, String telephone, String login, String email, String urlphoto,
-                     String nomService, int idService) {
+                     String nomService, int idService, int idInfirmier) {
         this.etat_civil = etat_civil;
         this.nom = nom;
         this.prenom = prenom;
@@ -27,12 +27,21 @@ public class Infirmier implements Serializable{
         this.urlphoto = urlphoto;
         this.nomService = nomService;
         this.idService = idService;
+        this.idInfirmier = idInfirmier;
     }
 
     public Infirmier (String login, String password)
     {
         this.login = login;
         this.password = password;
+    }
+
+    public int getIdInfirmier() {
+        return idInfirmier;
+    }
+
+    public void setIdInfirmier(int idInfirmier) {
+        this.idInfirmier = idInfirmier;
     }
 
     public String getPassword() {
